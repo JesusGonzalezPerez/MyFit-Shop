@@ -1,0 +1,149 @@
+// Variables
+@import "_variables.scss";
+
+// <div>
+.products{
+  background-color: $background;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  color:$primaryColor;
+  &:hover{
+    text-decoration: none;
+  }
+  // <div>
+  .articulos{
+    position: relative;
+    width: 10rem;
+    margin-right: .3rem;
+    margin-left: .3rem;
+    margin-bottom: 1.5rem;
+    background-color: $light;
+    border: 1px solid rgb(184, 184, 184);
+    &:hover{
+      box-shadow: 0 15px 25px 0 rgba(0,0,0,0.2);
+    }
+    // <router-link>
+    #router{
+      padding: 1rem;
+      text-decoration: none;
+      color: $primaryColor;
+      // <div>
+      #descuento{
+        margin:0;
+        position: absolute;
+        right: 0;
+        top:0;
+        padding: .2rem;
+        font-size: .5rem;
+        width: 3rem;
+        background-color: $secondaryColorT;
+        color:$light;
+      }
+      // <div>
+      .divImg{
+        height: 12rem;
+        img{
+          width:100%;
+        }
+        p{
+          font-size: .8rem;
+          i{
+            margin-right:.3rem;
+          }
+        }
+      }
+      // <div>
+      .divInfo{
+        height: 5rem;
+        padding: .2rem;
+        h5{
+          font-size: .7rem;
+        }
+      }
+      // <div>
+      #precio{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+          font-size:.8rem;
+          top: .7rem;
+          font-weight: bold;
+          color:$secondaryColor;
+          &:nth-child(2) {
+            color:$gris;
+            font-weight: normal;
+            font-size: .7rem;
+            text-decoration: line-through;
+          }
+        }
+      }
+      // <div>
+      .divButton{
+        margin-bottom: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+        button{
+          width:6rem;
+          font-size: .8rem;;
+        }
+      }
+    }
+  }
+  #filterModal{
+    .modal-content{
+      border:0;
+    }
+    .modal-header{
+      background-color: rgb(29, 29, 29);
+      color:$secondaryColor;
+      button{
+        color:$light;
+      }
+      .close{
+        text-shadow: none;
+        color:$secondaryColor;
+        font-size: 2rem;
+      }
+    }
+    .modal-body{
+      background-color: $background;
+    }
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      list-style: none;
+      li{
+        margin:.2rem;
+        padding:.5rem 1rem;
+        width: 30%;
+        cursor: pointer;
+        &:hover{
+          background-color: $secondaryColorT;
+          color: $primaryColor;
+          border-color: $primaryColor;
+          font-weight: 500;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  .modal-backdrop{
+    filter: blur(2px);
+  }
+  #searcher{
+    margin-bottom: 2rem;
+    #searchInput{
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      border-radius: 0;
+      :focus{
+        outline: none;
+      }
+    }
+  }
+}

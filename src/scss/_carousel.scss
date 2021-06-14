@@ -1,0 +1,22 @@
+// Importe variables
+@import "_variables.scss";
+
+img{
+    width: 100vw;
+    height: 55vh;
+}
+@media (max-width: 700px) {
+    img{
+        height: 20vh;
+    }
+}
+@media (min-width: 700px) and (max-width: 900px){
+    img{
+        height: 30vh;
+    }
+}
+@media (min-width: 900px) and (max-width: 1200px) {
+    img{
+        height: 40vh;
+    }
+}

@@ -1,0 +1,79 @@
+// Importe variables
+@import "_variables.scss";
+
+// <div>
+#footer{
+    display: flex;
+    justify-content: space-between;
+    // z-index: -99;
+    background-color: rgb(34, 34, 34);
+    padding:0.5rem;
+    // <div>
+    #contactDiv{
+        p{
+            margin-left:.9rem;
+            font-size: .9rem;
+            color:$light;
+        }
+        ul{
+            flex-direction: row;
+            justify-content: flex-start;
+            li{
+                display:flex;
+                margin: 0 0 2px 14.4px;
+                list-style: none;
+                margin-right: 1rem;
+                font-size: .8rem;
+                color:rgb(125, 125, 125);
+            }
+        }
+    }
+    // <div>
+    #infoDiv{
+        p{
+            margin-left:.9rem;
+            font-size: .9rem;
+            color: $light;
+        }
+        ul{
+            flex-direction: row;
+            li{
+                display:flex;
+                margin: 0 0 2px 14.4px;
+                list-style: none;
+                margin-right: 1rem;
+                a{
+                    font-size: .8rem;
+                    color:rgb(125, 125, 125);
+                    &:hover{
+                        text-decoration: none;
+                        color:$light;
+                    }
+                } 
+            }
+        }
+    }
+    // <div>
+    #socialDiv{
+        p{
+            margin-left:.9rem;
+            font-size: .9rem;
+            color:$light;
+        }
+        ul{
+            display:flex;
+            justify-content:flex-start;
+            li{
+                list-style: none;
+                a{
+                    color:white;
+                    &:hover{
+                        transform: rotate(15deg);
+                        color: $secondaryColorT;
+                        transition: 0.25s;
+                    }
+                }
+            }
+        }
+    }
+}

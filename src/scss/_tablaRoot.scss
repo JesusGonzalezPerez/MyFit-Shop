@@ -1,0 +1,72 @@
+// Se importan las variables
+@import "_variables.scss";
+
+.tabla-root{
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),url("http://hegoimartin.com/wp-content/uploads/2020/08/suplementaci%C3%B3n-deportiva.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    justify-content: center;
+    #divAdd{
+        background-color: $secondaryColorT;
+        border:1px $primaryColor solid;
+        border-radius: .5rem;
+        color:$light;
+        h3{
+            margin:1rem;
+        }
+        #tableAñadir{
+            display: flex;
+            justify-content:space-around;
+            margin-bottom:1rem;
+            input{
+                width:100%;
+                height:2rem;
+                padding-left:1rem;
+                border-radius:.5rem;
+            }
+            td{
+                width:15rem;
+                text-align: left;
+            }
+        }
+        .boton{
+            display: flex;
+            align-items: center;     
+            button{
+                width:10rem;
+                }
+        }
+    }
+}
+h5{
+    font-size:0.8rem;
+}
+#col1{
+    div{
+        border: 1px $primaryColor solid;
+        border-radius: .5rem;
+        background-color: rgb(252, 4, 132,0.5);
+        input{
+            border-radius: .25rem;
+        }
+    }
+}
+#col2{
+    border: 1px $primaryColor solid;
+    border-radius: .5rem;
+    background-color: rgb(252, 4, 132,0.5);
+    input{
+    border-radius: .25rem;
+    }
+}
+input:focus, input[type]:focus {
+    border-color: $light;
+}
+@media (min-width: 768px) {
+    .w-md-50 {
+        width:50% !important;
+    }
+}

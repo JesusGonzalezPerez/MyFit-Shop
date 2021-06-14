@@ -1,0 +1,33 @@
+// Importe variables
+@import "_variables.scss";
+
+.historial-ventas{
+    min-height: 42vh;
+    background-color: $background;
+    .pedido{
+        border: 1px $gris solid;
+        background-color: $secondaryColorT;
+        border-radius: .25rem;
+        i{
+            font-size:1.25rem;
+            &:hover{
+                cursor: pointer;
+                color: black;
+                transform: scale(1.2);
+            }
+        }
+        .productosList{
+            font-size:.8rem;
+            background-color: $light;
+            border: 1px $primaryColor solid;
+            border-radius: .25rem;
+            img{
+                border:solid 1px;
+            }
+        }
+    }
+}
+
+#grafica{
+    background-color: $background;
+}

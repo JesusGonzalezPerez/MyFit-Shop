@@ -1,0 +1,159 @@
+// Importe variables
+@import "_variables.scss";
+
+// <div> Principal (3 subcontenedores)
+#producto{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 70vh;
+    // Primer subcontenedor
+    #marcoImg{
+        width:100%;
+        height:100%;
+        overflow:hidden;
+        #divImg{
+            width:20rem;
+            height:20rem;
+            overflow:hidden;
+        }
+        img{
+            transition:all .9s ease;
+            width: 20rem;
+            height: 20rem;
+            &:hover{
+                -webkit-transform:scale(1.50);
+                -moz-transform:scale(1.50);
+                -ms-transform:scale(1.50);
+                -o-transform:scale(1.50);
+                transform:scale(1.50);
+            }
+        }
+        i{
+            border: .05rem solid;
+            border-radius:4px;
+            padding: .2rem;
+        }
+    }
+    // Segundo subcontenedor
+    #infoDiv{
+        p{
+            color:rgb(125, 125, 125);
+            font-size: 120%;
+        }
+        i{
+            border: .05rem solid;
+            border-radius:4px;
+            padding: .2rem;
+        }
+        h4,h5{
+            font-size: 150%;
+        }
+    }
+    // Tercer subcontenedor
+    #opciones{
+        border: $secondaryColorT solid 1px;
+        background-color: $background;
+        #divPrecio{
+            color:$secondaryColor;
+            font-size:1.5rem;
+            font-weight: bold; 
+        }
+        #precio{
+            color:$secondaryColor;
+            font-size:1.5rem;
+            font-weight: bold;
+        }  
+        #precioAntes{
+            text-decoration: line-through;
+            color:$gris;
+        }
+        #ahorro{
+            font-size: 0.7rem;
+            font-style: italic;
+            font-weight: bold;
+        }
+        #divDesc{
+            background-color: $secondaryColor;
+            color:$light;
+            width: 100%;
+            padding:.2rem;
+            font-weight: bold;
+            border-radius: 0.2rem;
+            #descuento{
+                background-color: $secondaryColor;
+                color:$light;
+                width: auto;
+            }
+        }
+        #stockIcon{
+            border:0;
+        }
+        #comprarBtn{
+            i{
+                border:0;
+            }
+        }
+        i{
+            border: .05rem solid;
+            border-radius:4px;
+            padding: .2rem;
+        }
+    }   
+}
+
+.default{
+    background-color: $light;
+    color: rgb(182, 182, 182);
+    &:hover{
+        background-color: rgb(235, 235, 235);
+    }
+}
+
+.verde{
+    background-color: $btnSave;
+    color: $primaryColor;
+    &:hover{
+        background-color: $btnSaveHover;
+    }
+}
+
+.rosa{
+    background-color: $btnEdit;
+    color: $primaryColor;
+    &:hover{
+        background-color: $btnEditHover;
+    }
+}
+
+#loader{
+    svg{
+        width:10rem;
+        height: 10rem;
+    }
+}
+
+#loader{
+    position: absolute;
+    z-index: 99;
+    width:98vw;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light;
+}
+.comentarioDiv{
+    background-color:$background;
+    padding:1rem;
+    border: 1px $secondaryColor solid;
+    box-shadow: 3px 3px 0.4em rgb(136, 136, 136), -0.3em 0 0.4em rgb(70, 70, 70);
+    .comentario{
+        height: 5vh;
+        border: 1px solid rgb(209, 209, 209);
+        background-color: $light;
+        color:$gris;
+        font-size: .75rem;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}

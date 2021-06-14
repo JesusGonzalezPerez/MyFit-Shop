@@ -1,0 +1,17 @@
+// Se importan las variables
+@import "_variables.scss";
+
+.registrar{
+    .header-login{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .field{
+        margin-bottom: 0.5rem;
+    }
+    #registrar{
+        width:10rem;
+        display: none;
+    }
+}

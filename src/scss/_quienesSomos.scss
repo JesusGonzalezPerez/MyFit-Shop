@@ -1,0 +1,13 @@
+// Se importan las variables
+@import "_variables.scss";
+
+.quienes-somos{ 
+    min-height: 100%;
+    .main{
+        div{
+            p{
+                color:$gris;
+            }
+        }
+    }
+}
