@@ -1,4 +1,4 @@
-# tienda_online
+  # MyFit Shop
 
 ## Project setup
 ```
