@@ -1,6 +1,6 @@
   # MyFit Shop
 
-![alt text](https://ibb.co/Rbz5BqP)
+![alt text](https://i.ibb.co/kBQd9t0/Captura.png)
 
 ## Project setup
 ```
