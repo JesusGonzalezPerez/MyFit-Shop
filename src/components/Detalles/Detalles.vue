@@ -14,7 +14,7 @@
         <!-- Subcontenedor con la imagen  -->
         <div id="marcoImg" class="d-flex align-items-center flex-column mb-2 col-12 col-md-5 py-5">
             <div id="divImg" class="d-flex flex-column align-items-center mb-5">
-                <img :src="producto.img"/>
+                <img :src="producto.img" :alt="producto.nombre"/>
             </div>
             <div v-if="root" class="d-flex flex-column align-items-center mx-2">
                 <div class="d-flex my-1">
@@ -30,7 +30,7 @@
                 <div class="d-flex justify-content-between align-items-center flex-wrap pt-4">
                     <div class="d-flex align-items-center flex-wrap ">
                         <!-- Si tiene descuento...  -->
-                        <div v-if="producto.descuento" id="divPrecio" class="d-flex text-left mr-2"><p id="precio" >{{precioConDescuento(producto.precio,producto.descuento)}}</p>€</div>
+                        <div v-if="producto.descuento" id="divPrecio" class="d-flex text-left mr-2"><p id="precio">{{precioConDescuento(producto.precio,producto.descuento)}}</p>€</div>
                         <!-- Si no...  -->
                         <div v-else id="divPrecio" class="d-flex align-items-center text-left mr-2 mb-3"><p  id="precio" class="mb-0" contenteditable="false">{{producto.precio}}</p>€</div>
                         <!-- Si tiene descuento... -->
@@ -136,7 +136,7 @@
                     </div>
                 </div>  
                 <p id="val" class="text-left" contenteditable="false">{{producto.valoracion}}</p>
-                <button v-if="root" class="btn btn-outline-dark" @click="deleteProduct">Borrar producto</button>
+                <button v-if="root" class="btn btn-outline-dark" @click="deleteProduct" alt="Borrar producto">Borrar producto</button>
             </div>
         </div>
 

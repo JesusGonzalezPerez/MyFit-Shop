@@ -31,3 +31,16 @@
 #grafica{
     background-color: $background;
 }
+
+.modal-content{
+    border:0;
+    .modal-header{
+        background-color: rgb(29, 29, 29);
+        color:$secondaryColor;
+        .close{
+            text-shadow: none;
+            color:$secondaryColor;
+            font-size: 2rem;
+        }
+    }
+}

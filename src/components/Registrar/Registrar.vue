@@ -30,9 +30,9 @@
                         </div>
                     </div>
                     <!-- Checkbox Mostrar contraseñas -->
-                    <div class="d-flex justify-content-center align-items-center">
-                        <input @click="showPasswords" class="mr-1" type="checkbox" value="" id="flexCheckChecked" checked>
-                        <label class="m-0" for="flexCheckChecked">
+                    <div class="custom-control custom-checkbox d-flex justify-content-center align-items-center">
+                        <input @click="showPasswords" class="custom-control-input mr-1" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="custom-control-label m-0" for="flexCheckChecked">
                           Mostrar Contraseña
                         </label>
                     </div>

@@ -15,3 +15,8 @@
         display: none;
     }
 }
+
+.custom-control-label::after{
+    background-color: $gris;
+    border-radius: .2rem;
+}

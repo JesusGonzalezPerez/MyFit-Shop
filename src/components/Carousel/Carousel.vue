@@ -16,7 +16,7 @@
                 <img data-src="holder.js/900x500/auto/#666:#444/text:Second slide" src="http://tienda.needsportnutricion.com/modules/tvcmsslider/views/img/5eb94003fcbb2474a135_banner2-1920x650.png" alt="Kit preWorkout">
             </div>
             <div class="carousel-item">
-                <img data-src="holder.js/900x500/auto/#666:#444/text:Third slide" src="https://www.jcmusclebuilding.com/wp-content/uploads/2014/12/optimum-nutrition-top-banner.png" alt="Firness slogan">
+                <img data-src="holder.js/900x500/auto/#666:#444/text:Third slide" src="https://www.jcmusclebuilding.com/wp-content/uploads/2014/12/optimum-nutrition-top-banner.png" alt="Fitness slogan">
             </div>
             <div class="carousel-item">
                 <img data-src="holder.js/900x500/auto/#666:#444/text:Third slide" src="https://i.pinimg.com/originals/36/24/0d/36240d7a8ad3ceeb5cf435cb462bbd75.jpg" alt="Creatine">
