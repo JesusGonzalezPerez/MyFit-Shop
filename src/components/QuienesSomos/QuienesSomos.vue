@@ -14,7 +14,7 @@
                     Entregamos donde quiera que esté, cuando quiera.
                     Respiramos tecnología, bebemos diseño y nos alimentamos de nuestra voluntad de superarnos distribuyendo los mejores productos del mundo.
                     Confía en nosotros. Alimentaremos tu cuerpo y mente con todo lo necesario para superarte.</p>
-                    <p>Si eres nuevo y quieres cambiar tu alimenatación estás a tan solo un paso clickando <router-link to="/Registrar"><a href="">aquí</a></router-link>.</p>
+                    <p>Si eres nuevo y quieres cambiar tu alimenatación estás a tan solo un paso clickando <router-link to="/Registrar"><a title="Ir a registrarse">aquí</a></router-link>.</p>
               </div>
           </div>
       </div>

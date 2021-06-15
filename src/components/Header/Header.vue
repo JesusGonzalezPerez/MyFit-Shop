@@ -22,20 +22,20 @@
                     </li>
                     <li v-if="user">
                         <router-link to="/Carrito" id="carrito">
-                            <i class="fa fa-shopping-cart"></i><span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">{{this.carrito.length}}</span>
+                            <i class="fa fa-shopping-cart" title="Carrito de la compra"></i><span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">{{this.carrito.length}}</span>
                         </router-link>
                     </li>
                     <li v-if="user">
-                        <div class="dropdown">
+                        <div class="dropdown" title="Perfil">
                             <a class="btn dropdown-toggle p-0 px-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true" :title="`Usuario: `+ correo"></i>
+                                <i class="fa fa-user" aria-hidden="true"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left p-0" id="dropdown" aria-labelledby="dropdownMenuButton">
                                 <p class="dropdown-header p-2 m-0 text-center">{{correo}}</p>
                                 <router-link to="/HistorialCompras">
-                                    <a class="dropdown-item"><i class="fa fa-bookmark" aria-hidden="true"></i> Historial de compras</a>
+                                    <a class="dropdown-item" title="Historial de compras"><i class="fa fa-bookmark" aria-hidden="true"></i> Historial de compras</a>
                                 </router-link>
-                                <a @click="cerrarCesion" class="dropdown-item"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>
+                                <a @click="cerrarCesion" class="dropdown-item" title="Cerrar sesión"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>
                             </div>
                         </div>
                     </li>

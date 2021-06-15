@@ -26,16 +26,16 @@
                         </router-link>
                     </li>
                     <li v-if="root">
-                        <div class="dropdown">
+                        <div class="dropdown" title="Perfil Administrador">
                             <a class="btn dropdown-toggle p-0 px-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true" :title="`Usuario: `+ correo"></i>
+                                <i class="fa fa-user" aria-hidden="true"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left p-0" id="dropdown" aria-labelledby="dropdownMenuButton">
                                 <p class="dropdown-header p-2 m-0 text-center">{{correo}}</p>
                                 <router-link to="/HistorialVentas">
-                                    <a class="dropdown-item"><i class="fa fa-bookmark" aria-hidden="true"></i> Historial de ventas</a>
+                                    <a class="dropdown-item" title="Historial de venats"><i class="fa fa-bookmark" aria-hidden="true"></i> Historial de ventas</a>
                                 </router-link>
-                                <a @click="cerrarCesion" class="dropdown-item"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>
+                                <a @click="cerrarCesion" class="dropdown-item"  title="Cerrar sesión"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>
                             </div>
                         </div>
                     </li> 

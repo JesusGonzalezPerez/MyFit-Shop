@@ -16,16 +16,16 @@
             <div v-else class="d-flex justify-content-around py-2" style="background-color:rgb(240,240,240)" v-for="(pedido,index) in arrayCompras" v-bind:key="pedido.id">
                 <div class="pedido d-flex justify-content-between w-75 flex-column p-2 my-1">
                     <div class="d-flex justify-content-between align-items-center px-2 pb-2 w-100">
-                      <div class="text-left" style="width:20rem;color:black">{{pedido.fecha}}</div>
-                      <div class="mx-3" style="font-weight:bold;color:black;background-color:rgb(252, 4, 132, 0.4);padding:.2rem;border-radius:.25rem;border:1px solid rgba(0, 0, 0, 0.53);width:8rem">Total: {{pedido.total}}€</div>
-                      <i :id="pedido.id" class="fa fa-arrow-circle-down" @click="desplegarItem(index,pedido.id)" aria-hidden="true"></i>
+                      <div class="text-left" style="width:20rem;color:black" title="Fecha">{{pedido.fecha}}</div>
+                      <div class="mx-3" style="font-weight:bold;color:black;background-color:rgb(252, 4, 132, 0.4);padding:.2rem;border-radius:.25rem;border:1px solid rgba(0, 0, 0, 0.53);width:8rem" title="Precio total">Total: {{pedido.total}}€</div>
+                      <i :id="pedido.id" class="fa fa-arrow-circle-down" @click="desplegarItem(index,pedido.id)" aria-hidden="true" title="Desplegar pedido"></i>
                     </div>
                     <div :id="index" class="d-none flex-column">
                         <div class="productosList d-flex justify-content-between flex-column flex-md-row align-items-center py-2 px-4 my-1" v-for="(producto,index) in pedido.listaProductos" v-bind:key="index">
-                            <img class="m-1" :src="producto.producto.img" alt="" style="width:3rem">
-                            <div class="d-flex align-items-center justify-content-center" style="width:12rem">{{producto.producto.nombre}}</div>
-                            <div>Cantidad: {{producto.producto.cantidad}}</div>
-                            <div>Precio Unidad: {{producto.producto.precio}} €</div>
+                            <img class="m-1" :src="producto.producto.img" :alt="producto.producto.img" title="Imagen producto" style="width:3rem">
+                            <div class="d-flex align-items-center justify-content-center" style="width:12rem" title="Nombre producto">{{producto.producto.nombre}}</div>
+                            <div title="Cantidad">Cantidad: {{producto.producto.cantidad}}</div>
+                            <div title="Precio">Precio Unidad: {{producto.producto.precio}} €</div>
                         </div>
                     </div>
                 </div>

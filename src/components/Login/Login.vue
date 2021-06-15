@@ -33,9 +33,9 @@
                     <!-- Otras opciones de login -->
                     <div class="btn-social-login">
                         <p class="ml-4">o identificarse con</p>
-                        <button id="fbButton" class="btn btn-outline-light" @click="iniciaSesionFB"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</button>
-                        <button id="gButton" class="btn btn-outline-light" @click="iniciaSesionG"><i class="fa fa-google-plus-square" aria-hidden="true"></i> Google</button>
-                        <button id="gitButton" class="btn btn-outline-light" @click="iniciaSesionGit"><i class="fa fa-github-square" aria-hidden="true"></i> GitHub</button>
+                        <button id="fbButton" class="btn btn-outline-light" @click="iniciaSesionFB" title="Iniciar sesión Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</button>
+                        <button id="gButton" class="btn btn-outline-light" @click="iniciaSesionG" title="Iniciar sesión Google"><i class="fa fa-google-plus-square" aria-hidden="true"></i> Google</button>
+                        <button id="gitButton" class="btn btn-outline-light" @click="iniciaSesionGit" title="Iniciar sesión GitHub"><i class="fa fa-github-square" aria-hidden="true"></i> GitHub</button>
                     </div>
               </div>
 

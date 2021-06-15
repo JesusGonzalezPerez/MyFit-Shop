@@ -32,7 +32,7 @@
                     <!-- Checkbox Mostrar contraseñas -->
                     <div class="custom-control custom-checkbox d-flex justify-content-center align-items-center">
                         <input @click="showPasswords" class="custom-control-input mr-1" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="custom-control-label m-0" for="flexCheckChecked">
+                        <label class="custom-control-label m-0" for="flexCheckChecked" title="Mostrar Contraseña">
                           Mostrar Contraseña
                         </label>
                     </div>
@@ -40,7 +40,7 @@
                     <div id="divRegister" class="text-center mt-5">
                         <button class="btn btn-secondary" id="registrar" @click="registrar" title="Registrar">Registrar</button>
                     </div>
-                    <p class="text-center mt-3">¿Tienes ya una cuenta registrada? <br> o quieres identificarte mediante una red social <br> <router-link to="/Login"><a href="" style="font-weight:bold;color:white;">Inicia sesión</a></router-link></p>
+                    <p class="text-center mt-3">¿Tienes ya una cuenta registrada? <br> o quieres identificarte mediante una red social <br> <router-link to="/Login"><a href="" style="font-weight:bold;color:white;" title="Iniciar sesión">Inicia sesión</a></router-link></p>
               </div> 
           </div>
       </div> 

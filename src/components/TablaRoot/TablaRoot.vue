@@ -52,8 +52,8 @@
 
                 <!-- Sucontenedor botones-->
                 <div id="buttons" class="d-flex justify-content-center p-3">
-                    <button  class="btn btn-outline-light mx-2" @click="addProduct('S')">Añadir suplemento</button>
-                    <button class="btn btn-outline-light mx-2" @click="clearFields">Limpiar campos</button>
+                    <button  class="btn btn-outline-light mx-2" title="Añadir suplemento" @click="addProduct('S')">Añadir suplemento</button>
+                    <button class="btn btn-outline-light mx-2" title="Limpiar campos" @click="clearFields">Limpiar campos</button>
                 </div>
             </form>
         </div>
@@ -107,8 +107,8 @@
 
                 <!-- Sucontenedor botones-->
                 <div id="buttons" class="d-flex justify-content-center p-3">
-                    <button  class="btn btn-outline-light mx-2" @click="addProduct('A')">Añadir alimento</button>
-                    <button class="btn btn-outline-light mx-2" @click="clearFields">Limpiar campos</button>
+                    <button  class="btn btn-outline-light mx-2" title="Añadir alimento" @click="addProduct('A')">Añadir alimento</button>
+                    <button class="btn btn-outline-light mx-2" title="Limpiar campos" @click="clearFields">Limpiar campos</button>
                 </div>
             </form>
         </div>

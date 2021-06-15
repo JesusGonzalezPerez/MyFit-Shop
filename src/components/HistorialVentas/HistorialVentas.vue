@@ -16,7 +16,7 @@
 
         <!-- Div principal -->
         <div class="historial-ventas pt-5">
-          <button class="btn btn-dark" data-toggle="modal" data-target="#modelId">Mostrar historial detallado de ventas</button>
+          <button class="btn btn-dark" data-toggle="modal" data-target="#modelId" title="Mostrar historial de ventas">Mostrar historial detallado de ventas</button>
 
           <!-- Modal -->
           <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -36,18 +36,18 @@
                     <!-- Si el arrayCompras no esta vacío -->
                     <div v-else class="d-flex justify-content-around py-2" v-for="(pedido,index) in arrayVentas" v-bind:key="pedido.id">
                         <div class="pedido d-flex justify-content-between w-75 flex-column p-2 my-1">
-                            <div class="mb-4" style="color:black;font-weight:bold;font-size:.8rem;word-wrap:break-word;">Usuario: {{pedido.usuario}}</div>
+                            <div class="mb-4" style="color:black;font-weight:bold;font-size:.8rem;word-wrap:break-word;" title="Usuario">Usuario: {{pedido.usuario}}</div>
                             <div class="d-flex justify-content-between align-items-center px-2 pb-2 w-100">
-                              <div class="text-left" style="width:20rem;color:black;font-size:.65rem;">{{pedido.fecha}}</div>
-                              <div class="mx-3 px-2" style="font-weight:bold;color:black;background-color:rgb(252, 4, 132, 0.4);border-radius:.25rem;border:1px solid rgba(0, 0, 0, 0.53);width:8rem">Total: {{pedido.total}}€</div>
-                              <i :id="pedido.id" class="fa fa-arrow-circle-down" @click="desplegarItem(index,pedido.id)" aria-hidden="true"></i>
+                              <div class="text-left" style="width:20rem;color:black;font-size:.65rem;" title="Fecha">{{pedido.fecha}}</div>
+                              <div class="mx-3 px-2" style="font-weight:bold;color:black;background-color:rgb(252, 4, 132, 0.4);border-radius:.25rem;border:1px solid rgba(0, 0, 0, 0.53);width:8rem" title="Precio total">Total: {{pedido.total}}€</div>
+                              <i :id="pedido.id" class="fa fa-arrow-circle-down" @click="desplegarItem(index,pedido.id)" aria-hidden="true" title="Desplegar pedido"></i>
                             </div>
                             <div :id="index" class="d-none flex-column">
                                 <div class="productosList d-flex justify-content-between flex-column flex-md-row align-items-center py-2 px-4 my-1" v-for="(producto,index) in pedido.listaProductos" v-bind:key="index">
-                                    <img class="m-1" :src="producto.producto.img" alt="" style="width:3rem">
-                                    <div class="d-flex align-items-center justify-content-center" style="width:12rem">{{producto.producto.nombre}}</div>
-                                    <div>Cantidad: {{producto.producto.cantidad}}</div>
-                                    <div>Precio Unidad: {{producto.producto.precio}} €</div>
+                                    <img class="m-1" :src="producto.producto.img" alt="Imagen" title="Imagen producto" style="width:3rem">
+                                    <div class="d-flex align-items-center justify-content-center" style="width:12rem" title="Nombre producto">{{producto.producto.nombre}}</div>
+                                    <div title="Cantidad">Cantidad: {{producto.producto.cantidad}}</div>
+                                    <div title="Precio">Precio Unidad: {{producto.producto.precio}} €</div>
                                 </div>
                             </div>
                         </div>

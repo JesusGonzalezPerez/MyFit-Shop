@@ -14,7 +14,7 @@
         <!-- Subcontenedor con la imagen  -->
         <div id="marcoImg" class="d-flex align-items-center flex-column mb-2 col-12 col-md-5 py-5">
             <div id="divImg" class="d-flex flex-column align-items-center mb-5">
-                <img :src="producto.img" :alt="producto.nombre"/>
+                <img :src="producto.img" :title="producto.nombre"/>
             </div>
             <div v-if="root" class="d-flex flex-column align-items-center mx-2">
                 <div class="d-flex my-1">
@@ -30,11 +30,11 @@
                 <div class="d-flex justify-content-between align-items-center flex-wrap pt-4">
                     <div class="d-flex align-items-center flex-wrap ">
                         <!-- Si tiene descuento...  -->
-                        <div v-if="producto.descuento" id="divPrecio" class="d-flex text-left mr-2"><p id="precio">{{precioConDescuento(producto.precio,producto.descuento)}}</p>€</div>
+                        <div v-if="producto.descuento" id="divPrecio" class="d-flex text-left mr-2"><p id="precio" title="Precio con descuento">{{precioConDescuento(producto.precio,producto.descuento)}}</p>€</div>
                         <!-- Si no...  -->
-                        <div v-else id="divPrecio" class="d-flex align-items-center text-left mr-2 mb-3"><p  id="precio" class="mb-0" contenteditable="false">{{producto.precio}}</p>€</div>
+                        <div v-else id="divPrecio" class="d-flex align-items-center text-left mr-2 mb-3"><p  id="precio" class="mb-0" title="Precio" contenteditable="false">{{producto.precio}}</p>€</div>
                         <!-- Si tiene descuento... -->
-                        <div v-if="producto.descuento" class="d-flex" style="color:grey"><p id="precioAntes" class="text-left" contenteditable="false">{{producto.precio}}</p>€</div>
+                        <div v-if="producto.descuento" class="d-flex" style="color:grey"><p id="precioAntes" class="text-left" title="Precio sin descuento" contenteditable="false">{{producto.precio}}</p>€</div>
 
                         <div v-if="root && producto.descuento" class="d-flex align-items-center mx-3 mb-3">
                             <i id="editPrice" @click="editProduct('precioAntes','editPrice')" class="fa fa-pencil-square-o default mx-1" aria-hidden="true"></i>
@@ -48,7 +48,7 @@
                 </div>
                 <!-- Si tiene descuento... -->
                 <div class="d-flex flex-wrap justify-content-center">
-                    <div v-if="producto.descuento" id="divDesc" class="d-flex justify-content-center align-items-center mb-1">Descuento <p id="descuento" class="d-flex align-items-center pl-2 pr-1 m-0" contenteditable="false">{{producto.descuento}}</p> %</div>
+                    <div v-if="producto.descuento" id="divDesc" class="d-flex justify-content-center align-items-center mb-1" title="Descuento">Descuento <p id="descuento" class="d-flex align-items-center pl-2 pr-1 m-0" contenteditable="false">{{producto.descuento}}</p> %</div>
                     <div v-if="root && producto.descuento" class="d-flex align-items-center mx-3 mb-3">
                         <i id="editDescuento" @click="editProduct('descuento','editDescuento')" class="fa fa-pencil-square-o default mx-1" aria-hidden="true"></i>
                         <i id="saveDecuento" @click="updateProduct('descuento','saveDecuento')" class="fa fa-floppy-o default mx-1" aria-hidden="true"></i>
@@ -58,7 +58,7 @@
                 <p v-if="producto.descuento" id="ahorro" class="text-left">Ahorras {{(producto.precio-precioConDescuento(producto.precio,producto.descuento)).toFixed(2)}}€!</p>
                 <!-- Si el stock es mayor a 0... -->
                 <div v-if="producto.stock>0" class="d-flex flex-column align-items-center w-100">
-                    <div class="d-flex flex-row"><i id="stockIcon" class="fa fa-check" aria-hidden="true" style="color:green"></i> Stock disponible (<p id="stock" contenteditable="false">{{producto.stock}}</p>)</div>
+                    <div class="d-flex flex-row" title="Stock"><i id="stockIcon" class="fa fa-check" aria-hidden="true" style="color:green"></i> Stock disponible (<p id="stock" contenteditable="false">{{producto.stock}}</p>)</div>
                     <div v-if="root" class="d-flex align-items-center mx-3 mb-3">
                         <i id="editStock" @click="editProduct('stock','editStock')" class="fa fa-pencil-square-o default mx-1" aria-hidden="true"></i>
                         <i id="saveStock" @click="updateProduct('stock','saveStock')" class="fa fa-floppy-o default mx-1" aria-hidden="true"></i>
@@ -66,7 +66,7 @@
                 </div>
                 <!-- Si no...  -->
                 <div v-else class="d-flex flex-column">
-                    <div class="mb-2"><i id="stockIcon" class="fa fa-times" aria-hidden="true" style="color:red" ></i> Stock  agotado, lo sentimos <i id="stockIcon" class="fa fa-frown-o" aria-hidden="true"></i></div>
+                    <div class="mb-2" title="Stock"><i id="stockIcon" class="fa fa-times" aria-hidden="true" style="color:red"></i> Stock  agotado, lo sentimos <i id="stockIcon" class="fa fa-frown-o" aria-hidden="true"></i></div>
                     <div v-if="root" class="d-flex justify-content-center mb-3">
                         <div v-if="root" class="d-flex">Stock (<p id="stock" class="m-0" contenteditable="false">{{producto.stock}}</p>)</div>
                         <i id="editStock" @click="editProduct('stock','editStock')" class="fa fa-pencil-square-o default mx-1" aria-hidden="true"></i>
@@ -75,7 +75,7 @@
                 </div>
 
                 <!-- Si hay usuario con sesión iniciada y el stock es mayor a 0 muestra el botón de añadir al carrito -->
-                <button v-if="user && producto.stock>0" id="comprarBtn" type="button" class="btn btn-dark mx-0 mb-3" @click="addProduct(producto.img, producto.nombre, producto.stock, precioConDescuento(producto.precio,producto.descuento))">Añadir <i class="fa fa-shopping-cart" aria-hidden="true"/></button>
+                <button v-if="user && producto.stock>0" id="comprarBtn" type="button" title="Añadir al carrito" class="btn btn-dark mx-0 mb-3" @click="addProduct(producto.img, producto.nombre, producto.stock, precioConDescuento(producto.precio,producto.descuento))">Añadir <i class="fa fa-shopping-cart" aria-hidden="true"/></button>
             </div>
         </div>    
           
@@ -83,7 +83,7 @@
         <div id="infoDiv" class="col-12 col-md-7">
             <!-- Título  -->
             <div class="d-flex mb-2">
-                <h4 id="nombre" class="text-left my-5" contenteditable="false">{{producto.nombre}}</h4>
+                <h4 id="nombre" class="text-left my-5" contenteditable="false" title="Nombre">{{producto.nombre}}</h4>
                 <div v-if="root" class="d-flex align-items-center mx-2">
                     <i id="editNombre" @click="editProduct('nombre','editNombre')" class="fa fa-pencil-square-o default mx-1" aria-hidden="true"></i>
                     <i id="saveNombre" @click="updateProduct('nombre','saveNombre')" class="fa fa-floppy-o default mx-1" aria-hidden="true"></i>
@@ -99,7 +99,7 @@
                         <i id="saveDesc" @click="updateProduct('desc','saveDesc')" class="fa fa-floppy-o default mx-1" aria-hidden="true"></i>
                     </div>
                 </div>                
-                <p id="desc" class="text-left" contenteditable="false">{{producto.descripcion}}</p>  
+                <p id="desc" class="text-left" contenteditable="false" title="Descripción">{{producto.descripcion}}</p>  
                 <!-- Capacidad  -->
                 <div class="d-flex mb-2">
                     <h5 class="text-left m-0">Cantidad</h5>
@@ -108,7 +108,7 @@
                         <i id="saveCan" @click="updateProduct('can','saveCan')" class="fa fa-floppy-o default mx-1" aria-hidden="true"></i>
                     </div>
                 </div>          
-                <p id="can" class="text-left" contenteditable="false">{{producto.cantidad}}</p>
+                <p id="can" class="text-left" contenteditable="false" title="Cantidad">{{producto.cantidad}}</p>
                 <!-- Categoría  -->
                 <div v-if="producto.categoria" class="d-flex mb-2">
                     <h5 class="text-left m-0">Categoría</h5>
@@ -117,7 +117,7 @@
                         <i id="saveCat" @click="updateProduct('cat','saveCat')" class="fa fa-floppy-o default mx-1" aria-hidden="true"></i>
                     </div>
                 </div>  
-                <p v-if="producto.categoria" id="cat" class="text-left" contenteditable="false">{{producto.categoria}}</p>
+                <p v-if="producto.categoria" id="cat" class="text-left" contenteditable="false" title="Categoría">{{producto.categoria}}</p>
                 <!-- Ingredientes -->
                 <div v-if="producto.ingredientes" class="d-flex mb-2">
                     <h5 class="text-left m-0">Ingredientes</h5>
@@ -126,7 +126,7 @@
                         <i id="saveIng" @click="updateProduct('ing','saveIng')" class="fa fa-floppy-o default mx-1" aria-hidden="true"></i>
                     </div>
                 </div>  
-                <p v-if="producto.ingredientes" id="ing" class="text-left" contenteditable="false">{{producto.ingredientes}}</p>
+                <p v-if="producto.ingredientes" id="ing" class="text-left" contenteditable="false" title="Ingredientes">{{producto.ingredientes}}</p>
                 <!-- Valoración  -->
                 <div class="d-flex mb-2">
                     <h5 class="text-left m-0">Valoración</h5>
@@ -135,7 +135,7 @@
                         <i id="saveVal" @click="updateProduct('val','saveVal')" class="fa fa-floppy-o default mx-1" aria-hidden="true"></i>
                     </div>
                 </div>  
-                <p id="val" class="text-left" contenteditable="false">{{producto.valoracion}}</p>
+                <p id="val" class="text-left" contenteditable="false" title="Valoración">{{producto.valoracion}}</p>
                 <button v-if="root" class="btn btn-outline-dark" @click="deleteProduct" alt="Borrar producto">Borrar producto</button>
             </div>
         </div>
@@ -144,8 +144,8 @@
         <div v-if="user" class="col-12 d-flex justify-content-center mt-3 p-0">
             <div class="form-group col-11 p-0 d-flex flex-column align-items-center">
                 <h5 class="text-left col-12 col-md-8" for="newComment">Comentarios</h5>
-                <textarea class="form-control col-12  col-md-8" placeholder="Escriba aquí su comentario..." id="newComment" rows="5" v-on:keyup.enter="addComment" style="resize:none;"></textarea>
-                <div class="comentarioDiv my-2 mt-3 d-flex flex-column text-left col-12 col-md-8" v-for="comentario in arrayComentarios" v-bind:key="comentario.id">
+                <textarea class="form-control col-12  col-md-8" title="Nuevo comentario" placeholder="Escriba aquí su comentario..." id="newComment" rows="5" v-on:keyup.enter="addComment" style="resize:none;"></textarea>
+                <div class="comentarioDiv my-2 mt-3 d-flex flex-column text-left col-12 col-md-8" title="Comentario" v-for="comentario in arrayComentarios" v-bind:key="comentario.id">
                     <div class="mb-2" style="font-size:.9rem"><img :src="comentario.img" alt="" style="border-radius:2rem;width:2rem;"> {{comentario.usuario}}</div>
                     <div class="comentario pl-3 pt-1 pb-5">
                         {{comentario.comentario}}

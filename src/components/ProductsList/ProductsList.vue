@@ -1,7 +1,7 @@
 <template>
   <div class="products">
           <!-- Contenedor producto -->
-          <div  class="articulos mr-2" v-for="el in Products" v-bind:key="el.id"> 
+          <div  class="articulos mr-2" v-for="el in Products" v-bind:key="el.id" :title="el.nombre"> 
               <router-link v-bind:to="`/Detalles/${el.id}`" id="router">
                   <!-- Etiqueta descuento  -->
                   <p v-if="el.descuento" id="descuento">{{el.descuento}}% DTO.</p>
@@ -24,7 +24,7 @@
               
               <!-- Contenedor con el botón [Añadir al carrito]  -->
               <div class="divButton text-center my-2 mb-3">
-                  <button v-if="user && el.stock>0" type="button" class="btn  btn-outline-dark mx-0 my-0" @click="addProduct(el.img, el.nombre, el.stock, precioConDescuento(el.precio,el.descuento), el.id)">
+                  <button v-if="user && el.stock>0" title="Añadir al carrito" type="button" class="btn  btn-outline-dark mx-0 my-0" @click="addProduct(el.img, el.nombre, el.stock, precioConDescuento(el.precio,el.descuento), el.id)">
                       Añadir <i class="fa fa-shopping-cart" aria-hidden="true"/>
                   </button>
                   <!-- Si no hay stock del producto  -->
